@@ -1,0 +1,8 @@
+excerpt_separator: ""
+pygments: true
+markdown: kramdown
+url: http://spacegoing.github.io
+title: spacegoing
+tagline: A log of everystep
+description: My awesome new site
+paginate: 5
