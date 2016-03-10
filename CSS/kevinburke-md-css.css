@@ -101,7 +101,7 @@ hr {
     color: #999;
 }
 img[alt="classroom"] {
-  max-width:  800px; 
+  min-width:  800px; 
   display: block;
 }
 
