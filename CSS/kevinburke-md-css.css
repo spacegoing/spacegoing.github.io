@@ -100,13 +100,7 @@ hr {
     margin: 0 auto 0 0;
     color: #999;
 }
-img[alt="Origin"] {
-  width:  800px; 
-}
-img[alt="People"] {
-  width:  800px; 
-}
-img[alt="Result"] {
+img {
   width:  800px; 
 }
 
