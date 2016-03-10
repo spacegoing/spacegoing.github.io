@@ -61,7 +61,7 @@ li ul, li ul {
 p, ul, ol {
     font-size: 16px;
     line-height: 24px;
-    max-width: 540px;
+    max-width: 800px;
 }
 pre {
     padding: 0px 24px;
@@ -82,7 +82,7 @@ blockquote {
     border-left:.5em solid #eee;
     padding: 0 2em;
     margin-left:0;
-    max-width: 476px;
+    max-width: 576px;
 }
 blockquote  cite {
     font-size:14px;
