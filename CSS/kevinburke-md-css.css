@@ -100,8 +100,14 @@ hr {
     margin: 0 auto 0 0;
     color: #999;
 }
-img[alt="classroom"] {
-  width:  300px; 
+img[alt="Origin"] {
+  width:  800px; 
+}
+img[alt="People"] {
+  width:  800px; 
+}
+img[alt="Result"] {
+  width:  800px; 
 }
 
 /* Code below this line is copyright Twitter Inc. */
