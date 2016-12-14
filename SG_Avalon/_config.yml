@@ -1,10 +1,10 @@
-title: Your awesome title
-email: your-email@domain.com
+title: spacegoing DNTG
+email: spacegoing@gmail.com
 description: description
-baseurl: /Jekyll-Avalon
-url: http://joshuaavalon.github.io
-twitter_username: joshuaavalon
-github_username:  joshuaavalon
+baseurl: /SG_DNTG
+url: http://spacegoing.github.io
+twitter_username: spacegoing
+github_username:  spacegoing
 
 sass:
   style: compressed
@@ -42,3 +42,8 @@ exclude:
   - Gemfile.lock
   - README.md
   - LICENSE
+
+highlighter: rouge
+# Workaround for
+# http://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed/
+excerpt_separator: ""   
