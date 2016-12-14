@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="javascript, YDKJS, sticky"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/SG_DNTG/favicon.png">
+    <title>Scope & Closures</title>
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/SG_DNTG/ydkjs%20%E8%B6%9F%E5%9D%91%E8%AE%B0/2016/12/14/Scope-&-Closures.html" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet"  />
+	<link rel="stylesheet" href="/SG_DNTG/css/main.css">
+	
+	<link rel="stylesheet" href="/SG_DNTG/css/prism.css">
+	
+    <link rel="alternate" type="application/rss+xml" title="spacegoing DNTG" href="/SG_DNTG/feed.xml" />
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container"><a href="#" data-activates="nav-bar" class="button-collapse"><i class="material-icons">menu</i></a></div>
+            <ul class="right hide-on-med-and-down ">
+                
+                <li><a href="/SG_DNTG/">Home</a></li>
+                
+                <li><a href="/SG_DNTG/categories.html">Categories</a></li>
+                
+                <li><a href="/SG_DNTG/tags.html">Tags</a></li>
+                
+            </ul>
+            <ul class="side-nav" id="nav-bar">
+                
+                <li><a href="/SG_DNTG/">Home</a></li>
+                
+                <li><a href="/SG_DNTG/categories.html">Categories</a></li>
+                
+                <li><a href="/SG_DNTG/tags.html">Tags</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+<br/>
+<main>
+    <div class="container">
+        
+<div class="row">
+<img class='lazy cover' data-original='/SG_DNTG/img/background/foxtail-barley.jpg'>
+</div>
+
+<div class="row">
+<h2>Scope & Closures</h2>
+<div class="valign-wrapper">
+<div class="author"><img src="/SG_DNTG/img/author.png" class="circle responsive-img"></div> <h5><a href="/SG_DNTG/categories/YDKJS 趟坑记">YDKJS 趟坑记</a> - 12/14/2016</h5>
+</div>
+    
+    
+    <a href="/SG_DNTG/tags/javascript"><div class="chip waves-effect waves-red">javascript</div></a>
+    
+    
+    
+    <a href="/SG_DNTG/tags/YDKJS"><div class="chip waves-effect waves-red">YDKJS</div></a>
+    
+    
+    
+    
+</div>
+<div class="row">
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// ------------ fe scope ---------------</span>
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'aepofi'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// bar();</span>
+
+<span class="c1">// ------------ hoisting ignore</span>
+<span class="c1">// function override ---------------</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">// 3</span>
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">// 3</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// ---------- Closure -----------</span>
+<span class="kd">function</span> <span class="nx">foo1</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">bar</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">foo1</span><span class="p">()</span>
+
+<span class="kd">function</span> <span class="nx">foo2</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">a</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">foo2</span><span class="p">()</span>
+
+<span class="kd">function</span> <span class="nx">foo3</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">aa</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">fooo</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+        <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aa</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">bar</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">fooo</span><span class="p">()</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">foo3</span><span class="p">();</span>
+
+<span class="c1">// Keng:</span>
+<span class="kd">var</span> <span class="nx">aa</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="kd">function</span> <span class="nx">foo4</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aa</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">bar</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">foo4</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1">// Immediate Enclosing Scope</span>
+<span class="kd">function</span> <span class="nx">foo5</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">bb</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="kd">function</span> <span class="nx">baz</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 2</span>
+    <span class="p">}</span>
+    <span class="nx">bar1</span><span class="p">(</span><span class="nx">baz</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">bar1</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fn</span><span class="p">();</span> <span class="c1">// look ma, I saw closure!</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">foo5</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">foo6</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 2</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">foo6</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">foo7</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">baaz</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">);</span> <span class="c1">// 2</span>
+        <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">fn</span><span class="p">();</span> <span class="c1">// look ma, I saw closure!</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">(</span><span class="nx">baaz</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span>
+    <span class="nx">baaz</span><span class="p">()</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">bb</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">foo7</span><span class="p">()</span>
+
+<span class="kd">function</span> <span class="nx">foo8</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">baaz</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">);</span> <span class="c1">// 2</span>
+        <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">baaz</span><span class="p">();</span> <span class="c1">// look ma, I saw closure!</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span> <span class="c1">// aaa=10 not 2, closure is foo8</span>
+    <span class="nx">baaz</span><span class="p">()</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span> <span class="c1">// aaa=10</span>
+    <span class="kd">var</span> <span class="nx">bb</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">foo8</span><span class="p">()</span>
+
+<span class="c1">// Keng: Scope doesn't exist</span>
+<span class="kd">var</span> <span class="nx">aaa10</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">func10</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="nx">IIFE</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="kd">var</span> <span class="nx">bbb</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="nx">pafeij</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa10</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa10</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="nx">func10</span><span class="p">();</span>
+
+<span class="c1">// --------- setTimeout 在for 循环结束后才执行 ---------</span>
+<span class="c1">// function waitSeconds(iMilliSeconds) {</span>
+<span class="c1">//     var counter= 0</span>
+<span class="c1">//         , start = new Date().getTime()</span>
+<span class="c1">//         , end = 0;</span>
+<span class="c1">//     while (counter &lt; iMilliSeconds) {</span>
+<span class="c1">//         end = new Date().getTime();</span>
+<span class="c1">//         counter = end - start;</span>
+<span class="c1">//     }</span>
+<span class="c1">// }</span>
+<span class="c1">// for (let i=1; i&lt;=5; i++) {</span>
+<span class="c1">//      setTimeout( function timer(){</span>
+<span class="c1">//          console.log( i ); }, 1000 );</span>
+<span class="c1">//      waitSeconds(1001)</span>
+<span class="c1">//      console.log('pajeopifaj'+i)</span>
+<span class="c1">// }</span>
+<span class="c1">//</span>
+<span class="c1">// console.log('ajofpewijfopaej')</span>
+
+<span class="c1">// --------- 上面循环的 equivalent ---------</span>
+<span class="c1">// var i = 1</span>
+<span class="c1">// i++</span>
+<span class="c1">// setTimeout( function timer(){</span>
+<span class="c1">//     console.log( i ); }, 1000 );</span>
+<span class="c1">// i++</span>
+<span class="c1">// setTimeout( function timer(){</span>
+<span class="c1">//     console.log( i ); }, 1000 );</span>
+<span class="c1">// i++</span>
+<span class="c1">// setTimeout( function timer(){</span>
+<span class="c1">//     console.log( i ); }, 1000 );</span>
+<span class="c1">// i++</span>
+<span class="c1">// setTimeout( function timer(){</span>
+<span class="c1">//     console.log( i ); }, 1000 );</span>
+<span class="c1">// i++</span>
+<span class="c1">// setTimeout( function timer(){</span>
+<span class="c1">//     console.log( i ); }, 1000 );</span>
+<span class="c1">//</span>
+<span class="c1">// console.log('japoweijfopaijwe')</span>
+
+<span class="c1">// --------- iife implementation ---------</span>
+<span class="c1">// for (var i=1; i&lt;=5; i++) {</span>
+<span class="c1">//     (function iifee(j){</span>
+<span class="c1">//         setTimeout( function timer(){</span>
+<span class="c1">//             console.log( j ); }, 1000 );</span>
+<span class="c1">//         console.log('pajeopifaj'+i)</span>
+<span class="c1">//     })(i)</span>
+<span class="c1">// }</span>
+<span class="c1">// console.log('jpfaoiejfopiaj')</span>
+<span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">count</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">cool</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">self</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">},</span><span class="mi">100</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">cool</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'jojio'</span><span class="o">+</span><span class="nx">obj</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span></code></pre></figure>
+
+
+</div>
+    </div>
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                    content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2016 Avalon
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js" defer></script>
+<script src="/SG_DNTG/js/load.js" defer></script>
+
+<script src="/SG_DNTG/js/prism.js"></script>
+
+</body>
+</html>
