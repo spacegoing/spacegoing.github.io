@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/https://spacegoing.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/https://spacegoing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/https://spacegoing.github.io/" rel="alternate" type="text/html" /><updated>2016-12-14T22:15:04+11:00</updated><id>http://localhost:4000/https://spacegoing.github.io//</id><title type="html">spacegoing DNTG</title><subtitle>description</subtitle><entry><title type="html">Scope &amp;amp; Closures —— Javascript 趟坑系列之三</title><link href="http://localhost:4000/https://spacegoing.github.io/ydkjs%20%E8%B6%9F%E5%9D%91%E8%AE%B0/2016/12/14/Scope-&-Closures.html" rel="alternate" type="text/html" title="Scope &amp; Closures —— Javascript 趟坑系列之三" /><published>2016-12-14T00:00:00+11:00</published><updated>2016-12-14T00:00:00+11:00</updated><id>http://localhost:4000/https://spacegoing.github.io/ydkjs%20%E8%B6%9F%E5%9D%91%E8%AE%B0/2016/12/14/Scope-&amp;-Closures</id><content type="html" xml:base="http://localhost:4000/https://spacegoing.github.io/ydkjs%20%E8%B6%9F%E5%9D%91%E8%AE%B0/2016/12/14/Scope-&amp;-Closures.html">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// ------------ fe scope ---------------&lt;/span&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/https://spacegoing.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/https://spacegoing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/https://spacegoing.github.io/" rel="alternate" type="text/html" /><updated>2016-12-22T11:24:47+11:00</updated><id>http://localhost:4000/https://spacegoing.github.io//</id><title type="html">spacegoing DNTG</title><subtitle>description</subtitle><entry><title type="html">Sjz Venture</title><link href="http://localhost:4000/https://spacegoing.github.io/venture/2016/12/22/sjz-venture.html" rel="alternate" type="text/html" title="Sjz Venture" /><published>2016-12-22T00:00:00+11:00</published><updated>2016-12-22T00:00:00+11:00</updated><id>http://localhost:4000/https://spacegoing.github.io/venture/2016/12/22/sjz-venture</id><content type="html" xml:base="http://localhost:4000/https://spacegoing.github.io/venture/2016/12/22/sjz-venture.html">&lt;h1 id=&quot;section&quot;&gt;石家庄孵化器信息&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;问题&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;每个创业园资金支持多少？申请资金支持的条件是什么？&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果额度有变化，哪些硬性条件决定了资助额度？&lt;/p&gt;
+
+    &lt;p&gt;以&lt;code class=&quot;highlighter-rouge&quot;&gt;2.2&lt;/code&gt;为例，条例中明面上写的非常模糊，字面理解只要注册
+就有10万元个人+30万元企业的资金支持。是否准确？&lt;/p&gt;
+
+    &lt;p&gt;条例中写30-100万，决定额度的因素都有哪些？是以硬性条件（
+都有哪些）为主还是靠人为操作为主？&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;link-2&quot;&gt;石家庄高新技术创业服务中心(以岭医院)&lt;a href=&quot;http://www.sjzibi.com/index.html&quot;&gt; link &lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TEL: 0311-83811546&lt;/li&gt;
+  &lt;li&gt;河北科技风险投资有限公司创业分公司 0311 85961611&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;link-3&quot;&gt;申请条件 &lt;a href=&quot;http://www.sjzibi.com/news/23_276.html&quot;&gt; link &lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;确定有
+    &lt;ol&gt;
+      &lt;li&gt;留学人员的身份证明（护照或身份证，取得国外永久居留权和加入外
+籍的留学人员提供所在国身份证明及我国驻外使馆的证明）；&lt;/li&gt;
+      &lt;li&gt;留学人员所在国的学历证明（毕业证书、学位证书或访问学者工作证明）；&lt;/li&gt;
+      &lt;li&gt;留学回国人员提交我国驻外使领馆开具的“留学人员归国证明”或教育
+部开具的“学历证明”；&lt;/li&gt;
+      &lt;li&gt;企业章程、工商执照、税务登记证&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;模糊
+    &lt;ol&gt;
+      &lt;li&gt;项目可行性报告、科技成果鉴定证书或专利证书；&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;link-3-1&quot;&gt;资助政策 &lt;a href=&quot;http://www.sjzibi.com/news/23_276.html&quot;&gt; link &lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;经批准入驻的企业，符合专项扶持资金管理办法所列第四条的，入驻时留
+学人员创业园一次性给予10万元创业启动资金扶持；已入驻的企业，符合
+专项扶持资金管理办法所列第五条的，留学人员创业园给予30–100万元项
+目资金扶持。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;石家庄高新技术开发区黄河大道136号科技中心&lt;/h2&gt;
+
+&lt;p&gt;TEL: 0311-66685171&lt;/p&gt;
+
+&lt;h3 id=&quot;link-1&quot;&gt;众创空间&lt;a href=&quot;http://www.phbutler.com/platform/app/yunchuang/portal2/art-index.html&quot;&gt; link &lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;免费使用（水、电）……&lt;/li&gt;
+  &lt;li&gt;免费工位&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;孵化器&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;独立办公室（0.6元/平米）&lt;/li&gt;
+  &lt;li&gt;有风投 66685169&lt;/li&gt;
+  &lt;li&gt;有配套资金、需要专家答辩，每年不定时申请，到时通知。10万左右。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;专利&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;http://www.vipzhuanli.com/ : 数据区块技术&lt;/li&gt;
+&lt;/ul&gt;</content><category term="sjz" /><category term="venture" /><category term="sticky" /></entry><entry><title type="html">Scope &amp;amp; Closures —— Javascript 趟坑系列之三</title><link href="http://localhost:4000/https://spacegoing.github.io/ydkjs%20%E8%B6%9F%E5%9D%91%E8%AE%B0/2016/12/14/Scope-&-Closures.html" rel="alternate" type="text/html" title="Scope &amp; Closures —— Javascript 趟坑系列之三" /><published>2016-12-14T00:00:00+11:00</published><updated>2016-12-14T00:00:00+11:00</updated><id>http://localhost:4000/https://spacegoing.github.io/ydkjs%20%E8%B6%9F%E5%9D%91%E8%AE%B0/2016/12/14/Scope-&amp;-Closures</id><content type="html" xml:base="http://localhost:4000/https://spacegoing.github.io/ydkjs%20%E8%B6%9F%E5%9D%91%E8%AE%B0/2016/12/14/Scope-&amp;-Closures.html">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// ------------ fe scope ---------------&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'aepofi'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
